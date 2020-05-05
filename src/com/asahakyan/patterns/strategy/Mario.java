@@ -1,11 +1,8 @@
 package com.asahakyan.patterns.strategy;
 
 import com.asahakyan.patterns.strategy.attack.AttackStrategy;
-import com.asahakyan.patterns.strategy.attack.NoAttack;
 import com.asahakyan.patterns.strategy.jump.JumpStrategy;
-import com.asahakyan.patterns.strategy.jump.NormalJump;
 import com.asahakyan.patterns.strategy.move.MoveStrategy;
-import com.asahakyan.patterns.strategy.move.NormalMove;
 
 public class Mario {
     private MoveStrategy moveStrategy;
