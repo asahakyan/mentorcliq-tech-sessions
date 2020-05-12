@@ -9,6 +9,7 @@ import com.asahakyan.homework.game.libs.personage.tekken.EddyPersonage;
 import com.asahakyan.homework.game.personage.GamePersonage;
 import com.asahakyan.homework.game.personage.MarioPersonage;
 import com.asahakyan.runner.PatternRunner;
+import src.com.asahakyan.homework.game.adapter.EddyPersonageAdapter;
 
 public class GameHomework implements PatternRunner {
     @Override
@@ -28,9 +29,11 @@ public class GameHomework implements PatternRunner {
         System.out.println(personage.getName());
         personage.printMyStats();
         // here goes adapter part to change the personage and call above 2 functions
-        //personage = getImportedPersonage();
-        //System.out.println(personage.getName());
-        //personage.printMyStats();
+        personage = getImportedPersonage();
+        System.out.println(personage.getName());
+        personage.printMyStats();
+        personage.action().attack();
+        personage.action().move();
 
         //TODO bridge example
 
@@ -45,6 +48,8 @@ public class GameHomework implements PatternRunner {
     }
 
     private GamePersonage getImportedPersonage() {
+        EddyPersonage eddyPersonage = new EddyPersonage();
+        GamePersonage eddy = new EddyPersonageAdapter(getDefaultActionStrategy(), eddyPersonage);
         //TODO we should use Eddy from Tekken here
         return null;
     }
