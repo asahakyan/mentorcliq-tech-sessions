@@ -7,7 +7,7 @@ import com.asahakyan.patterns.bridge.source.MusicSource;
 import com.asahakyan.patterns.bridge.source.impl.CdSource;
 import com.asahakyan.patterns.bridge.source.impl.TapeSource;
 import com.asahakyan.patterns.bridge.source.impl.UsbSource;
-import com.asahakyan.patterns.runner.PatternRunner;
+import com.asahakyan.runner.PatternRunner;
 
 import java.util.ArrayList;
 import java.util.Collections;

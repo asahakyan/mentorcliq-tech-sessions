@@ -4,7 +4,7 @@ import com.asahakyan.patterns.adapter.mail.OutlookClient;
 import com.asahakyan.patterns.adapter.mail.exchange.ExchangeMailServerTest;
 import com.asahakyan.patterns.adapter.mail.google.ExchangeMailServerAdapter;
 import com.asahakyan.patterns.adapter.mail.google.GoogleMailServerTest;
-import com.asahakyan.patterns.runner.PatternRunner;
+import com.asahakyan.runner.PatternRunner;
 
 public class AdapterRunner implements PatternRunner {
     @Override

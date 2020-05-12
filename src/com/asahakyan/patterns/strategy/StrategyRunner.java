@@ -1,6 +1,6 @@
 package com.asahakyan.patterns.strategy;
 
-import com.asahakyan.patterns.runner.PatternRunner;
+import com.asahakyan.runner.PatternRunner;
 import com.asahakyan.patterns.strategy.attack.NoAttack;
 import com.asahakyan.patterns.strategy.attack.ShootAttack;
 import com.asahakyan.patterns.strategy.jump.HighJump;

@@ -1,4 +1,4 @@
-package com.asahakyan.patterns.runner;
+package com.asahakyan.runner;
 
 public interface PatternRunner {
 
