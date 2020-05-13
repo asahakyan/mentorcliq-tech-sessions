@@ -51,6 +51,6 @@ public class GameHomework implements PatternRunner {
         EddyPersonage eddyPersonage = new EddyPersonage();
         GamePersonage eddy = new EddyPersonageAdapter(getDefaultActionStrategy(), eddyPersonage);
         //TODO we should use Eddy from Tekken here
-        return null;
+        return eddy;
     }
 }
