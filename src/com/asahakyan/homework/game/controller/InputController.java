@@ -1,6 +1,7 @@
 package com.asahakyan.homework.game.controller;
 
 import com.asahakyan.homework.game.bridge.InputDevice;
+import com.asahakyan.homework.game.singleton.ConfigurationLoader;
 
 import java.util.Map;
 
@@ -32,6 +33,7 @@ public class InputController {
             } else if (code == 2) {
                 listener.attackTrigger();
             } else if (code == 999) {
+                ConfigurationLoader.getInstance().saveConfiguration();
                 System.exit(0);
             } else {
                 //TODO;

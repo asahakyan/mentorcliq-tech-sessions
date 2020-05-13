@@ -6,11 +6,13 @@ import com.asahakyan.homework.game.controller.GameRunner;
 import com.asahakyan.homework.game.controller.InputController;
 import com.asahakyan.homework.game.libs.bridge.KeyboardImplementor;
 import com.asahakyan.homework.game.personage.GamePersonage;
+import com.asahakyan.homework.game.singleton.ConfigurationLoader;
 import com.asahakyan.runner.PatternRunner;
 
 public class GameHomework implements PatternRunner {
     @Override
     public void run() {
+        ConfigurationLoader.getInstance().loadConfiguration();
         init();
     }
 
