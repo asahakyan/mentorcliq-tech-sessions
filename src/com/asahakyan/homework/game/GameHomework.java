@@ -14,7 +14,7 @@ public class GameHomework implements PatternRunner {
     public void run() {
         loadConfiguration();
 
-        playTheGame();
+        init();
 
         saveConfiguration();
     }
@@ -27,7 +27,7 @@ public class GameHomework implements PatternRunner {
         //save the config: singleton pattern
     }
 
-    private void playTheGame() {
+    private void init() {
         GamePersonage personage = getDefaultPersonage();
         // strategy example
         personage.action().attack();
