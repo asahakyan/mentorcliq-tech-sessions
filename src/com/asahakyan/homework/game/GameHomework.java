@@ -5,9 +5,13 @@ import com.asahakyan.homework.game.action.attack.NoAttack;
 import com.asahakyan.homework.game.action.attack.ShootAttack;
 import com.asahakyan.homework.game.action.jump.NormalJump;
 import com.asahakyan.homework.game.action.move.SlowMove;
+import com.asahakyan.homework.game.action.move.FastMove;
+import com.asahakyan.homework.game.controller.JoystickController;
+import com.asahakyan.homework.game.controller.KeyboardController;
 import com.asahakyan.homework.game.libs.personage.tekken.EddyPersonage;
 import com.asahakyan.homework.game.personage.GamePersonage;
 import com.asahakyan.homework.game.personage.MarioPersonage;
+import com.asahakyan.patterns.strategy.move.MoveStrategy;
 import com.asahakyan.runner.PatternRunner;
 import src.com.asahakyan.homework.game.adapter.EddyPersonageAdapter;
 
@@ -49,6 +53,17 @@ public class GameHomework implements PatternRunner {
 
         //TODO bridge example
 
+        System.out.println();
+        KeyboardController keyboard = new KeyboardController(personage);
+        keyboard.getPressedKey("a");
+        keyboard.getPressedKey("space");
+
+        System.out.println();
+        JoystickController joystick = new JoystickController(personage);
+        joystick.detectJoystickMove(2);
+
+        personage.action().setMoveStrategy(new FastMove());
+        joystick.detectJoystickMove(2);
     }
 
     private GamePersonage getDefaultPersonage() {
