@@ -5,7 +5,6 @@ import com.asahakyan.patterns.bridge.source.impl.CdSource;
 
 import java.util.Collections;
 import java.util.List;
-import java.util.Random;
 
 public class CdPlayer extends MusicPlayer {
     public CdPlayer(CdSource source) throws Exception {

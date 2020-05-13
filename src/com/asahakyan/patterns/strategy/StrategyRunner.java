@@ -1,12 +1,12 @@
 package com.asahakyan.patterns.strategy;
 
-import com.asahakyan.runner.PatternRunner;
 import com.asahakyan.patterns.strategy.attack.NoAttack;
 import com.asahakyan.patterns.strategy.attack.ShootAttack;
 import com.asahakyan.patterns.strategy.jump.HighJump;
 import com.asahakyan.patterns.strategy.jump.NormalJump;
 import com.asahakyan.patterns.strategy.move.FastMove;
 import com.asahakyan.patterns.strategy.move.NormalMove;
+import com.asahakyan.runner.PatternRunner;
 
 public class StrategyRunner implements PatternRunner {
     @Override

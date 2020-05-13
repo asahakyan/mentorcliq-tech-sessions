@@ -1,13 +1,7 @@
 package com.asahakyan.homework.game.controller;
 
-import com.asahakyan.homework.game.GameRunner;
 import com.asahakyan.homework.game.bridge.InputDevice;
-import com.asahakyan.homework.game.bridge.InputDeviceDefault;
-import com.asahakyan.homework.game.libs.bridge.GamepadImplementor;
-import com.asahakyan.homework.game.libs.bridge.KeyboardImplementor;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Map;
 
 public class InputController {
@@ -40,14 +34,6 @@ public class InputController {
             } else {
                 //TODO;
             }
-        }
-    }
-
-    public static void main(String[] args) {
-        InputController inputController = new InputController(new InputDeviceDefault(new KeyboardImplementor()));
-        inputController.addListener(new GameRunner());
-        while (true) {
-            inputController.listen();
         }
     }
 }

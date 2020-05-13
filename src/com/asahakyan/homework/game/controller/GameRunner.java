@@ -1,11 +1,10 @@
-package com.asahakyan.homework.game;
+package com.asahakyan.homework.game.controller;
 
 import com.asahakyan.homework.game.action.ActionStrategy;
 import com.asahakyan.homework.game.action.attack.NoAttack;
-import com.asahakyan.homework.game.action.attack.ShootAttack;
 import com.asahakyan.homework.game.action.jump.NormalJump;
 import com.asahakyan.homework.game.action.move.SlowMove;
-import com.asahakyan.homework.game.controller.InputListener;
+import com.asahakyan.homework.game.adapter.EddyPersonageAdapter;
 import com.asahakyan.homework.game.libs.personage.tekken.EddyPersonage;
 import com.asahakyan.homework.game.personage.GamePersonage;
 import com.asahakyan.homework.game.personage.MarioPersonage;
@@ -15,6 +14,10 @@ public class GameRunner implements InputListener {
 
     public GameRunner() {
         init();
+    }
+
+    public GameRunner(GamePersonage gamePersonage) {
+        this.gamePersonage = gamePersonage;
     }
 
     @Override
@@ -33,21 +36,21 @@ public class GameRunner implements InputListener {
     }
 
     private void init() {
-        this.gamePersonage = getDefaultPersonage();
+        this.gamePersonage = GameRunner.getDefaultPersonage();
 
     }
 
-    private GamePersonage getDefaultPersonage() {
+    public static GamePersonage getDefaultPersonage() {
         return new MarioPersonage(getDefaultActionStrategy());
     }
 
-    private ActionStrategy getDefaultActionStrategy() {
+    public static ActionStrategy getDefaultActionStrategy() {
         return new ActionStrategy(new SlowMove(), new NormalJump(), new NoAttack());
     }
 
-    private GamePersonage getImportedPersonage() {
+    public static GamePersonage getImportedPersonage() {
         EddyPersonage eddyPersonage = new EddyPersonage();
-        GamePersonage eddy = new src.com.asahakyan.homework.game.adapter.EddyPersonageAdapter(getDefaultActionStrategy(), eddyPersonage);
+        GamePersonage eddy = new EddyPersonageAdapter(getDefaultActionStrategy(), eddyPersonage);
         return eddy;
     }
 }
