@@ -3,10 +3,10 @@ package com.asahakyan.homework.game.libs.bridge;
 import java.util.Scanner;
 
 public class KeyboardImplementor implements InputDeviceImplementor {
+    Scanner sc = new Scanner(System.in);
+
     @Override
     public String getInput() {
-        Scanner sc = new Scanner(System.in);
-
         String key = sc.nextLine();
         if (key.equals("a")) {
             return "a";

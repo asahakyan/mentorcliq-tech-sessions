@@ -28,20 +28,26 @@ public class InputController {
         String key = inputDevice.getInputAction();
         Integer code = driver.get(key);
 
-        if (code == 0) {
-            listener.moveTrigger();
-        } else if (code == 1) {
-            listener.jumpTrigger();
-        } else if (code == 2) {
-            listener.attackTrigger();
+        if (code == null) {
+            System.out.println("Not supported action, skip");
         } else {
-            //TODO;
+            if (code == 0) {
+                listener.moveTrigger();
+            } else if (code == 1) {
+                listener.jumpTrigger();
+            } else if (code == 2) {
+                listener.attackTrigger();
+            } else {
+                //TODO;
+            }
         }
     }
 
     public static void main(String[] args) {
         InputController inputController = new InputController(new InputDeviceDefault(new KeyboardImplementor()));
         inputController.addListener(new GameRunner());
-        inputController.listen();
+        while (true) {
+            inputController.listen();
+        }
     }
 }
