@@ -5,7 +5,6 @@ import com.asahakyan.homework.game.action.attack.NoAttack;
 import com.asahakyan.homework.game.action.attack.ShootAttack;
 import com.asahakyan.homework.game.action.jump.NormalJump;
 import com.asahakyan.homework.game.action.move.SlowMove;
-import com.asahakyan.homework.game.libs.personage.tekken.EddyPersonage;
 import com.asahakyan.homework.game.personage.GamePersonage;
 import com.asahakyan.homework.game.personage.MarioPersonage;
 import com.asahakyan.runner.PatternRunner;
@@ -13,10 +12,22 @@ import com.asahakyan.runner.PatternRunner;
 public class GameHomework implements PatternRunner {
     @Override
     public void run() {
-        init();
+        loadConfiguration();
+
+        playTheGame();
+
+        saveConfiguration();
     }
 
-    private void init() {
+    private static void loadConfiguration() {
+        //load the config: singleton pattern
+    }
+
+    private static void saveConfiguration() {
+        //save the config: singleton pattern
+    }
+
+    private void playTheGame() {
         GamePersonage personage = getDefaultPersonage();
         // strategy example
         personage.action().attack();
