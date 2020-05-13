@@ -1,67 +1,45 @@
 package com.asahakyan.homework.game;
 
-import com.asahakyan.homework.game.action.ActionStrategy;
-import com.asahakyan.homework.game.action.attack.NoAttack;
 import com.asahakyan.homework.game.action.attack.ShootAttack;
-import com.asahakyan.homework.game.action.jump.NormalJump;
-import com.asahakyan.homework.game.action.move.SlowMove;
-import com.asahakyan.homework.game.libs.personage.tekken.EddyPersonage;
+import com.asahakyan.homework.game.bridge.InputDeviceDefault;
+import com.asahakyan.homework.game.controller.GameRunner;
+import com.asahakyan.homework.game.controller.InputController;
+import com.asahakyan.homework.game.libs.bridge.KeyboardImplementor;
 import com.asahakyan.homework.game.personage.GamePersonage;
-import com.asahakyan.homework.game.personage.MarioPersonage;
 import com.asahakyan.runner.PatternRunner;
-import src.com.asahakyan.homework.game.adapter.EddyPersonageAdapter;
 
 public class GameHomework implements PatternRunner {
     @Override
     public void run() {
-        loadConfiguration();
-
         init();
-
-        saveConfiguration();
     }
 
-    private static void loadConfiguration() {
-        //load the config: singleton pattern
-    }
-
-    private static void saveConfiguration() {
-        //save the config: singleton pattern
-    }
 
     private void init() {
-        GamePersonage personage = getDefaultPersonage();
+        GamePersonage personage = GameRunner.getDefaultPersonage();
+
         // strategy example
         personage.action().attack();
         personage.action().jump();
         personage.action().setAttackStrategy(new ShootAttack());
         personage.action().attack();
 
-        //TODO adapter example
         System.out.println(personage.getName());
         personage.printMyStats();
+
         // here goes adapter part to change the personage and call above 2 functions
-        personage = getImportedPersonage();
+        personage = GameRunner.getImportedPersonage();
         System.out.println(personage.getName());
         personage.printMyStats();
         personage.action().attack();
         personage.action().move();
 
-        //TODO bridge example
+        InputController inputController = new InputController(new InputDeviceDefault(new KeyboardImplementor()));
+        inputController.addListener(new GameRunner(personage));
 
-    }
+        while (true) {
+            inputController.listen();
+        }
 
-    private GamePersonage getDefaultPersonage() {
-        return new MarioPersonage(getDefaultActionStrategy());
-    }
-
-    private ActionStrategy getDefaultActionStrategy() {
-        return new ActionStrategy(new SlowMove(), new NormalJump(), new NoAttack());
-    }
-
-    private GamePersonage getImportedPersonage() {
-        EddyPersonage eddyPersonage = new EddyPersonage();
-        GamePersonage eddy = new EddyPersonageAdapter(getDefaultActionStrategy(), eddyPersonage);
-        return eddy;
     }
 }

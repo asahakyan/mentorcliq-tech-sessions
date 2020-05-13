@@ -1,8 +1,8 @@
-package src.com.asahakyan.homework.game.adapter;
+package com.asahakyan.homework.game.adapter;
 
-import com.asahakyan.homework.game.personage.GamePersonage;
-import com.asahakyan.homework.game.libs.personage.tekken.EddyPersonage;
 import com.asahakyan.homework.game.action.ActionStrategy;
+import com.asahakyan.homework.game.libs.personage.tekken.EddyPersonage;
+import com.asahakyan.homework.game.personage.GamePersonage;
 
 
 public class EddyPersonageAdapter extends GamePersonage {
@@ -21,6 +21,6 @@ public class EddyPersonageAdapter extends GamePersonage {
 
     @Override
     public void printMyStats() {
-        eddyPersonage.getStrength();
+        System.out.println(eddyPersonage.getStrength());
     }
 }
