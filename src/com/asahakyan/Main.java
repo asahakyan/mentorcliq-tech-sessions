@@ -6,8 +6,8 @@ import static com.asahakyan.runner.PatternRunnerFactory.createPatternRunner;
 
 public class Main {
 
-    public static void main(String[] args) {
+    /*public static void main(String[] args) {
         createPatternRunner(Pattern.GAMEHOMEWORK).run();
-    }
+    }*/
 
 }
