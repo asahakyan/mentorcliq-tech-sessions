@@ -14,32 +14,32 @@ public class GameHomework implements PatternRunner {
         init();
     }
 
-
     private void init() {
         GamePersonage personage = GameRunner.getDefaultPersonage();
 
-        // strategy example
+        System.out.println("\nSTRATEGY EXAMPLE");
         personage.action().attack();
         personage.action().jump();
         personage.action().setAttackStrategy(new ShootAttack());
         personage.action().attack();
 
+        System.out.println("\nADAPTER EXAMPLE");
         System.out.println(personage.getName());
         personage.printMyStats();
-
-        // here goes adapter part to change the personage and call above 2 functions
+        System.out.println("\nchanging to imported personage");
         personage = GameRunner.getImportedPersonage();
         System.out.println(personage.getName());
         personage.printMyStats();
         personage.action().attack();
         personage.action().move();
 
+        System.out.println("\nTHE BEST PART");
+        System.out.println("BRIDGE EXAMPLE WITH LISTENERS");
+        System.out.println("input your action please");
         InputController inputController = new InputController(new InputDeviceDefault(new KeyboardImplementor()));
         inputController.addListener(new GameRunner(personage));
-
         while (true) {
             inputController.listen();
         }
-
     }
 }

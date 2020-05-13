@@ -31,6 +31,8 @@ public class InputController {
                 listener.jumpTrigger();
             } else if (code == 2) {
                 listener.attackTrigger();
+            } else if (code == 999) {
+                System.exit(0);
             } else {
                 //TODO;
             }

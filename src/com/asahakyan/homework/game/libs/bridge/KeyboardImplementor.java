@@ -16,6 +16,8 @@ public class KeyboardImplementor implements InputDeviceImplementor {
             return "space";
         } else if (key.equals("f")) {
             return "f";
+        } else if (key.equals("end")) {
+            return "end";
         } else {
             return "s";
         }
@@ -23,7 +25,6 @@ public class KeyboardImplementor implements InputDeviceImplementor {
 
     @Override
     public String[] getDriver() {
-        String[] driver = {"a:0","d:0","space:1", "f:2"};
-        return driver;
+        return new String[]{"a:0", "d:0", "space:1", "f:2", "end:999"};
     }
 }

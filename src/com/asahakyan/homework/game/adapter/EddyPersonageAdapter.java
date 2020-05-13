@@ -21,6 +21,6 @@ public class EddyPersonageAdapter extends GamePersonage {
 
     @Override
     public void printMyStats() {
-        System.out.println(eddyPersonage.getStrength());
+        System.out.print(eddyPersonage.getStrength());
     }
 }

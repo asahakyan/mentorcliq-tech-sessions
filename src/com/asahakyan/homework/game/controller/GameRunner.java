@@ -12,10 +12,6 @@ import com.asahakyan.homework.game.personage.MarioPersonage;
 public class GameRunner implements InputListener {
     private GamePersonage gamePersonage;
 
-    public GameRunner() {
-        init();
-    }
-
     public GameRunner(GamePersonage gamePersonage) {
         this.gamePersonage = gamePersonage;
     }
@@ -33,11 +29,6 @@ public class GameRunner implements InputListener {
     @Override
     public void attackTrigger() {
         gamePersonage.action().attack();
-    }
-
-    private void init() {
-        this.gamePersonage = GameRunner.getDefaultPersonage();
-
     }
 
     public static GamePersonage getDefaultPersonage() {
