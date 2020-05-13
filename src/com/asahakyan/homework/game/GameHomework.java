@@ -5,6 +5,7 @@ import com.asahakyan.homework.game.action.attack.NoAttack;
 import com.asahakyan.homework.game.action.attack.ShootAttack;
 import com.asahakyan.homework.game.action.jump.NormalJump;
 import com.asahakyan.homework.game.action.move.SlowMove;
+import com.asahakyan.homework.game.libs.personage.tekken.EddyPersonage;
 import com.asahakyan.homework.game.personage.GamePersonage;
 import com.asahakyan.homework.game.personage.MarioPersonage;
 import com.asahakyan.runner.PatternRunner;
@@ -61,7 +62,6 @@ public class GameHomework implements PatternRunner {
     private GamePersonage getImportedPersonage() {
         EddyPersonage eddyPersonage = new EddyPersonage();
         GamePersonage eddy = new EddyPersonageAdapter(getDefaultActionStrategy(), eddyPersonage);
-        //TODO we should use Eddy from Tekken here
         return eddy;
     }
 }
