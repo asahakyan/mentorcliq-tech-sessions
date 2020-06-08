@@ -5,5 +5,6 @@ public enum Pattern {
     ADAPTER,
     BRIDGE,
     FACADE,
+    DECORATOR,
     GAMEHOMEWORK
 }
