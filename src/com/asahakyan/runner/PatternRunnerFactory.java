@@ -6,6 +6,7 @@ import com.asahakyan.patterns.bridge.BridgeRunner;
 import com.asahakyan.patterns.decorator.DecoratorRunner;
 import com.asahakyan.patterns.facade.FacadeRunner;
 import com.asahakyan.patterns.strategy.StrategyRunner;
+import com.asahakyan.patterns.template_method.TemplateMethodRunner;
 
 public class PatternRunnerFactory {
 
@@ -21,6 +22,8 @@ public class PatternRunnerFactory {
                 return new FacadeRunner();
             case DECORATOR:
                 return new DecoratorRunner();
+            case TEMPLATE_METHOD:
+                return new TemplateMethodRunner();
             case GAMEHOMEWORK:
                 return new GameHomework();
             default:

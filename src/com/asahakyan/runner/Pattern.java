@@ -6,5 +6,6 @@ public enum Pattern {
     BRIDGE,
     FACADE,
     DECORATOR,
+    TEMPLATE_METHOD,
     GAMEHOMEWORK
 }
