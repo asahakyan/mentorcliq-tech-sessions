@@ -7,7 +7,7 @@ import static com.asahakyan.runner.PatternRunnerFactory.createPatternRunner;
 public class Main {
 
     public static void main(String[] args) {
-        createPatternRunner(Pattern.TEMPLATE_METHOD).run();
+        createPatternRunner(Pattern.FACTORY_METHOD).run();
     }
 
 }

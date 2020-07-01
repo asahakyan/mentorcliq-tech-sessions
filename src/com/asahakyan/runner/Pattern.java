@@ -7,5 +7,6 @@ public enum Pattern {
     FACADE,
     DECORATOR,
     TEMPLATE_METHOD,
+    FACTORY_METHOD,
     GAMEHOMEWORK
 }
