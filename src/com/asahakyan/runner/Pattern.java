@@ -8,5 +8,6 @@ public enum Pattern {
     DECORATOR,
     TEMPLATE_METHOD,
     FACTORY_METHOD,
+    ABSTRACT_FACTORY,
     GAMEHOMEWORK
 }

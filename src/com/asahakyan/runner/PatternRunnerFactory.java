@@ -1,6 +1,7 @@
 package com.asahakyan.runner;
 
 import com.asahakyan.homework.game.GameHomework;
+import com.asahakyan.patterns.abstract_factory.AbstractFactoryRunner;
 import com.asahakyan.patterns.adapter.AdapterRunner;
 import com.asahakyan.patterns.bridge.BridgeRunner;
 import com.asahakyan.patterns.decorator.DecoratorRunner;
@@ -27,6 +28,8 @@ public class PatternRunnerFactory {
                 return new TemplateMethodRunner();
             case FACTORY_METHOD:
                 return new FactoryMethodRunner();
+            case ABSTRACT_FACTORY:
+                return new AbstractFactoryRunner();
             case GAMEHOMEWORK:
                 return new GameHomework();
             default:
